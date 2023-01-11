@@ -1,0 +1,34 @@
+.header_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ebebeb;
+  padding-inline: 0px;
+  padding-right: 24px;
+  background-color: var(--white);
+}
+
+.header_top a {
+  color: var(--grayscale);
+  transition: 0.3s;
+}
+
+.header_top a:hover {
+  color: var(--gold);
+  transition: 0.3s;
+}
+
+.header_top_sm {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  border-right: 1px solid #ebebeb;
+  padding-left: 24px;
+  padding-right: 32px;
+  padding-block: 18px;
+}
+
+.header_top_sm svg {
+  width: 24px;
+  height: 24px;
+}

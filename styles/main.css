@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@font-face {
+  font-family: "Bebas-Neue";
+  src: url("/fonts/Bebas_Neue/BebasNeue-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Benzin";
+  src: url("/fonts/Benzin/Benzin-Bold.ttf");
+}
+
+@font-face {
+  font-family: "FirsNeue-Regular";
+  src: url("/fonts/Firs_Neue/TTFirsNeue-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FirsNeue-Medium";
+  src: url("/fonts/Firs_Neue/TTFirsNeue-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FirsNeue-Semibold";
+  src: url("/fonts/Firs_Neue/TTFirsNeue-DemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FirsNeue-Bold";
+  src: url("/fonts/Firs_Neue/TTFirsNeue-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Halvar";
+  src: url("/fonts/Halvar/HalvarBreit-Bd.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Halvar-Medium";
+  src: url("/fonts/Halvar/HalvarBreit-Md.woff") format("woff");
+}
+
+:root {
+  --white: #ffffff;
+  --gold: #ac835e;
+  --darker-gold: #916e50;
+  --black: #020105;
+  --grayscale: #353437;
+  --inter: "Inter";
+  --benzin-bold: "Benzin";
+  --neue-regular: "FirsNeue-Regular";
+  --neue-medium: "FirsNeue-Medium";
+  --neue-semibold: "FirsNeue-Semibold";
+  --neue-bold: "FirsNeue-Bold";
+  --bebas-neue: "Bebas-Neue";
+  --halvar: "Halvar";
+  --halvar-medium: "Halvar-Medium";
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none !important;
+  font-family: var(--inter), sans-serif;
+  scroll-behavior: smooth !important;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f7;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+input:focus,
+textarea:focus,
+button:focus,
+a:focus {
+  outline: none !important;
+}
+
+button {
+  cursor: pointer;
+}
+
+p {
+  margin: 0 !important;
+}
+
+.p {
+  font-family: var(--inter), sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  color: currentColor;
+  transition: 0.3s;
+}
+
+.box {
+  max-width: 1632px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 16px;
+}
+
+.miniBox {
+  max-width: 1192px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 16px;
+}
+
+.dynamic_box {
+  max-width: 1824px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 24px;
+  border-inline: 1px solid #ebebeb;
+  /* border-block: 1px solid red; */
+}
+
+.logo {
+  display: inline-block;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.section {
+  padding-top: 120px;
+}
+
+footer {
+  margin-top: 120px;
+}

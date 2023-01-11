@@ -1,0 +1,11 @@
+.titles_div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--grayscale);
+}
+
+.titles_div p {
+  max-width: 930px;
+  width: 100%;
+}

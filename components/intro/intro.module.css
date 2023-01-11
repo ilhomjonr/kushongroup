@@ -1,0 +1,54 @@
+.intro {
+  max-height: 360px;
+  height: 100vh;
+  color: var(--white);
+  background-image: url("../../public/media/intromask.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 88px;
+}
+
+.intro_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 100%;
+}
+
+.page_title {
+  font-family: var(--neue-semibold), var(--inter), sans-serif;
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.locationbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 530px;
+}
+
+.locationbar_node {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.last_node {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a.locationbar_node:hover {
+  color: var(--gold);
+  transition: 0.3s;
+}
