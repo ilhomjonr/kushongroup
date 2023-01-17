@@ -1,5 +1,5 @@
 import { location } from "../../../public/icons";
-import mainStyles from "../../../styles/Building.module.css";
+import mainStyles from "../../../styles/building.module.css";
 import styles from "./advantages.module.css";
 
 export const BuildingAdvantages = () => {

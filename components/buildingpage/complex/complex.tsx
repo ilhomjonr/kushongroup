@@ -1,4 +1,4 @@
-import mainStyles from "../../../styles/Home.module.css";
+import mainStyles from "../../../styles/home.module.css";
 import styles from "./complex.module.css";
 import Link from "next/link";
 import Image from "next/image";

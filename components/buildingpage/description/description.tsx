@@ -1,4 +1,4 @@
-import mainStyles from "../../../styles/Building.module.css";
+import mainStyles from "../../../styles/building.module.css";
 import styles from "./description.module.css";
 
 export const BuildingDescription = () => {

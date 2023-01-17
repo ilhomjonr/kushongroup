@@ -1,6 +1,6 @@
 import Link from "next/link";
 import mainStyles from "../../../styles/building.module.css";
-import styles from "./News.module.css";
+import styles from "./news.module.css";
 import jk1 from "../../../public/media/jk1.png";
 import jk2 from "../../../public/media/jk2.png";
 import jk3 from "../../../public/media/jk3.png";
