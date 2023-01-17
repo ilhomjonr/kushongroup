@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { useContext } from "react";
+import { TranslationsContext } from "../../contexts/TranslationsContext";
 import styles from "./intro.module.css";
 
 type Props = {
@@ -6,14 +8,21 @@ type Props = {
   title: string | any;
   page: string | any;
   parent?: string | any;
+  mainpage: { url: string };
 };
 
-export const IntroSection = ({ color, title, page, parent }: Props) => {
+export const IntroSection = ({
+  color,
+  title,
+  page,
+  parent,
+  mainpage,
+}: Props) => {
   return (
     <section style={{ backgroundColor: color }} className={styles.intro}>
       <div className={`box ${styles.intro_inner}`}>
         <h1 className={styles.page_title}>{title}</h1>
-        <LocationBar page={page} parent={parent} />
+        <LocationBar page={page} parent={parent} mainpage={mainpage} />
       </div>
     </section>
   );
@@ -22,13 +31,16 @@ export const IntroSection = ({ color, title, page, parent }: Props) => {
 type LocationBarProps = {
   page: string | any;
   parent?: string | any;
+  mainpage: any;
 };
 
-const LocationBar = ({ page, parent }: LocationBarProps) => {
+const LocationBar = ({ page, parent, mainpage }: LocationBarProps) => {
+  const { translations } = useContext(TranslationsContext);
+
   return (
     <nav className={styles.locationbar}>
-      <Link href={"/"} className={styles.locationbar_node}>
-        Главная
+      <Link href={mainpage.url} className={styles.locationbar_node}>
+        {translations.main}
       </Link>
       <span className={styles.locationbar_node}>/</span>
       {parent && (

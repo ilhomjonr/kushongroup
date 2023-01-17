@@ -1,0 +1,205 @@
+.hero {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  max-height: 750px;
+  position: relative;
+}
+
+.hero_slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero_swiper {
+  height: 100%;
+}
+
+.hero_slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.56) -4.58%,
+    rgba(0, 0, 0, 0) 27.74%,
+    rgba(0, 0, 0, 0) 92.03%
+  );
+}
+
+.hero_slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero_swiper_absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero_swiper_buttons_container {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 80px;
+  padding-bottom: 40px;
+}
+
+.hero_swiper_buttons_container button {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: none;
+  background-color: unset;
+  color: var(--white);
+  pointer-events: all;
+}
+
+.hero_swiper_buttons_container button svg {
+  width: 28px;
+  height: 28px;
+  transition: 0.4s;
+}
+
+.hero_swiper_buttons_container button:hover svg {
+  color: var(--gold);
+  transition: 0.4s;
+}
+
+/* === INFO === */
+.info_section {
+  background-color: var(--white);
+  z-index: 2;
+  border-bottom: 1px solid #eeee;
+}
+
+.info_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 30px;
+}
+
+.buttons_side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  width: 100%;
+}
+
+.buttons_side button {
+  font-family: var(--inter), sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  max-width: 288px;
+  width: 100%;
+  height: 56px;
+}
+
+.buttons_side button:first-child {
+  background-color: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.buttons_side button:first-child:hover {
+  background-color: #8f6c4c;
+  transition: 0.4s;
+}
+
+.buttons_side button:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  cursor: pointer;
+  border: 1px solid var(--gold);
+  background-color: var(--white);
+  color: var(--gold);
+  transition: 0.4s;
+}
+
+.buttons_side button:last-child:hover {
+  background-color: var(--gold);
+  color: var(--white);
+  transition: 0.4s;
+}
+
+.buttons_side button:last-child svg {
+  width: 32px;
+  height: 32px;
+}
+
+.info_content_side {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.content_title {
+  font-family: var(--bebas-neue), "Bebas Neue", sans-serif;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.content_content {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+}
+
+.content_texts {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.content_texts p {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black);
+}
+
+.content_location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.content_location svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 880px) {
+  .hero {
+    max-height: 440px;
+  }
+}

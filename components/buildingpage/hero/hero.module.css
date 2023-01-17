@@ -1,0 +1,135 @@
+.hero {
+  height: 100vh;
+  max-height: 1100px;
+}
+
+.hero_inner {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.absolute_btn_container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.buttons_container {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.swiper_buttons {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 80px;
+}
+
+.swiper_btn {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  pointer-events: all;
+  background-color: unset;
+}
+
+.swiper_btn svg {
+  width: 40px;
+  height: 40px;
+  margin-left: 3px;
+}
+
+.hero_swiper {
+  height: 100%;
+}
+
+.slide {
+  padding-top: 88px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: var(--white);
+  padding-bottom: 80px;
+}
+
+.slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    #051511 0%,
+    rgba(5, 21, 17, 0) 37.32%,
+    rgba(5, 21, 17, 0.24) 100%
+  );
+  background-blend-mode: soft-light;
+}
+
+.slide_inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+  color: var(--white);
+}
+
+.slide_inner p:last-child {
+  max-width: 930px;
+}
+
+.swiper_title {
+  font-family: var(--neue-bold), sans-serif;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 128px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .swiper_btn {
+    width: 64px;
+    height: 64px;
+  }
+  .slide_inner p:last-child {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 880px) {
+  .hero {
+    max-height: 440px;
+  }
+  .swiper_title {
+    font-size: 68px;
+    line-height: 68px;
+  }
+}

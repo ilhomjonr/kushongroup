@@ -11,6 +11,11 @@
 }
 
 @font-face {
+  font-family: "Haus-bold";
+  src: url("/fonts/Hauss/ALSHauss-Bold.woff") format("woff");
+}
+
+@font-face {
   font-family: "FirsNeue-Regular";
   src: url("/fonts/Firs_Neue/TTFirsNeue-Regular.woff") format("woff");
 }
@@ -45,6 +50,7 @@
   --gold: #ac835e;
   --darker-gold: #916e50;
   --black: #020105;
+  --green: #0a392d;
   --grayscale: #353437;
   --inter: "Inter";
   --benzin-bold: "Benzin";
@@ -55,6 +61,7 @@
   --bebas-neue: "Bebas-Neue";
   --halvar: "Halvar";
   --halvar-medium: "Halvar-Medium";
+  --haus-bold: "Haus-bold";
 }
 
 *,
@@ -77,6 +84,12 @@
 
 main {
   flex: 1 1 auto;
+}
+
+input,
+textarea,
+button {
+  border: none;
 }
 
 input:focus,
@@ -131,6 +144,7 @@ p {
   height: 88px;
   object-fit: contain;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .section {
@@ -139,4 +153,88 @@ p {
 
 footer {
   margin-top: 120px;
+}
+
+.backholding {
+  font-family: var(--neue-semibold), var(--inter), sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.backholding:hover {
+  color: var(--black);
+  text-decoration: underline !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-slide-thumb-active {
+  opacity: 1 !important;
+  transition: 0.4s;
+  border: 2px solid var(--gold) !important;
+}
+
+.swiper-slide-thumb-active img {
+  padding: 6px;
+}
+
+@media (max-width: 1800px) {
+  .p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .backholding {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .backholding {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 880px) {
+  .section {
+    padding-top: 80px;
+  }
+  footer {
+    margin-top: 80px;
+  }
+  .logo {
+    width: 64px;
+    height: 64px;
+  }
+  .backholding {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: 580px) {
+  .p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+  .section {
+    padding-top: 40px;
+  }
+  footer {
+    margin-top: 40px;
+  }
+  .backholding {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }

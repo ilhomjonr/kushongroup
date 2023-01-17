@@ -1,0 +1,143 @@
+.about_section {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.about_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.about_inner::after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  right: -5%;
+  width: 700px;
+  height: 700px;
+  background: linear-gradient(
+    152.3deg,
+    #104e3e 13.75%,
+    rgba(16, 78, 62, 0) 46.65%
+  );
+  border-radius: 50%;
+  z-index: -2;
+}
+
+.about_content_side {
+  max-width: 750px;
+  width: 100%;
+  padding-block: 120px;
+}
+
+.about_titles {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--white);
+}
+
+.about_stats_container {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+}
+
+.about_stats_div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 48px;
+}
+
+.about_stats_number {
+  font-family: var(--benzin-bold);
+  font-size: 80px;
+  line-height: 94px;
+  color: var(--white);
+}
+
+.tower {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  width: 570px;
+  height: 750px;
+  object-fit: contain;
+  z-index: -1;
+}
+
+@media (max-width: 1200px) {
+  .about_stats_container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .tower {
+    top: auto;
+    width: 400px;
+    bottom: -2%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 880px) {
+  .about_section {
+    padding-top: 40px;
+  }
+  .about_inner {
+    flex-direction: column;
+    gap: 80px;
+  }
+  .about_stats_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .about_content_side {
+    padding-block: 0px;
+  }
+  .about_inner::after {
+    bottom: -35%;
+    right: 0%;
+  }
+  .tower {
+    position: static;
+    height: 400px;
+    object-fit: fill;
+  }
+  .about_stats_number {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 580px) {
+  .tower_side::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: var(--white);
+  }
+  .tower {
+    width: 360px;
+  }
+  .about_inner::after {
+    right: -45%;
+  }
+  .about_stats_number {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .about_stats_div p:last-child {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

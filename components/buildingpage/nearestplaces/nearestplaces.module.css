@@ -1,0 +1,155 @@
+.nearestplaces_section {
+  padding-block: 120px;
+  background-color: #f7f7f7;
+}
+
+.partners_top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.partners_swiper {
+  margin-top: 40px;
+}
+
+.partners_slide {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.partners_slide_img {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+.partners_slide_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper_buttons {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c2c2c3;
+  width: 200px;
+  height: 72px;
+  background-color: var(--white);
+}
+
+.swiper_buttons span {
+  display: inline-block;
+  width: 1px;
+  height: 48px;
+  background-color: #c2c2c3;
+}
+
+.swiper_btn {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+}
+
+.swiper_btn svg {
+  width: 24px;
+  height: 24px;
+  color: var(--black);
+  transition: 0.4s;
+}
+
+.swiper_btn:hover svg {
+  color: var(--gold);
+  transition: 0.4s;
+}
+
+.plan {
+  margin-top: 40px;
+  border: 1px solid #ebebeb;
+}
+
+.plan_img_div {
+  padding-block: 24px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.plan_img_div svg {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+
+.plan_img {
+  display: inline-block;
+  height: 670px;
+  max-width: 1120px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.plan_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 24px;
+  border-top: 1px solid #ebebeb;
+  padding-block: 24px;
+}
+
+.plan_content_div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.plan_content_title {
+  font-family: var(--inter), sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #9a999b;
+  text-transform: uppercase;
+}
+
+.plan_content_desc {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+@media (max-width: 880px) {
+  .nearestplaces_section {
+    padding-block: 80px;
+  }
+  .partners_swiper {
+    margin-top: 16px;
+  }
+  .swiper_buttons {
+    display: none;
+  }
+  .partners_slide_img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 580px) {
+  .nearestplaces_section {
+    padding-block: 40px;
+  }
+  .partners_slide_img {
+    height: 170px;
+  }
+}

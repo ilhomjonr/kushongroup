@@ -67,8 +67,22 @@ export const MainBlogs = ({ title }: Props) => {
           <h3 className={mainStyles.section_title}>{title}</h3>
         </div>
         <Swiper
-          slidesPerView={4}
+          slidesPerView={"auto"}
           spaceBetween={24}
+          breakpoints={{
+            0: {
+              slidesPerView: 1.2,
+            },
+            580: {
+              slidesPerView: 2.2,
+            },
+            880: {
+              slidesPerView: 3,
+            },
+            1200: {
+              slidesPerView: 4,
+            },
+          }}
           loop
           speed={2000}
           autoplay={{

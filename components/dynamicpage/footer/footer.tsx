@@ -9,30 +9,31 @@ import {
   telegram,
 } from "../../../public/icons";
 import Image from "next/image";
+import { useContext } from "react";
+import { ServicesContext } from "../../../contexts/ServicesContext";
+import { useRouter } from "next/router";
+import { TranslationsContext } from "../../../contexts/TranslationsContext";
+import styled from "styled-components";
 
 export const DynamicPageFooter = () => {
-  const services = [
-    {
-      id: 1,
-      title: "Charog'on house",
-      slug: "charogon-house",
-    },
-    {
-      id: 2,
-      title: "Ремонт дома",
-      slug: "remont-doma",
-    },
-    {
-      id: 3,
-      title: "Дизайн интерьера",
-      slug: "dizayn-interyera",
-    },
-    {
-      id: 4,
-      title: "Производство",
-      slug: "proizvodtsvo",
-    },
-  ];
+  const router = useRouter();
+  const { translations } = useContext(TranslationsContext);
+  const { services } = useContext(ServicesContext);
+
+  const SMLink = styled.a`
+    width: 28px;
+    height: 28px;
+    color: var(--white);
+    transition: 0.3s;
+  `;
+
+  const Logo = styled.div`
+    display: inline-block;
+    width: 88px;
+    height: 88px;
+    cursor: pointer;
+    object-fit: contain;
+  `;
 
   return (
     <footer className={styles.footer}>
@@ -40,7 +41,9 @@ export const DynamicPageFooter = () => {
         <div className={styles.footer_top}>
           <div className={styles.footer_inner_first}>
             <Link href={"/"}>
-              <Image src={logo} alt="logo" className="logo" />
+              <Logo>
+                <Image src={logo} alt="logo" />
+              </Logo>
             </Link>
             <p className="p">
               «Darkhan Avenue» — это экстравагантный, современный жилой комплекс
@@ -48,7 +51,7 @@ export const DynamicPageFooter = () => {
               красивой архитектурой.
             </p>
             <nav className={styles.social_media}>
-              <a
+              <SMLink
                 href={"#"}
                 target={"_blank"}
                 rel={"noreferrer"}
@@ -56,8 +59,8 @@ export const DynamicPageFooter = () => {
                 aria-label={"telegram"}
               >
                 {telegram}
-              </a>
-              <a
+              </SMLink>
+              <SMLink
                 href={"#"}
                 target={"_blank"}
                 rel={"noreferrer"}
@@ -65,8 +68,8 @@ export const DynamicPageFooter = () => {
                 aria-label={"instagram"}
               >
                 {instagram}
-              </a>
-              <a
+              </SMLink>
+              <SMLink
                 href={"#"}
                 target={"_blank"}
                 rel={"noreferrer"}
@@ -74,7 +77,7 @@ export const DynamicPageFooter = () => {
                 aria-label={"facebook"}
               >
                 {facebook}
-              </a>
+              </SMLink>
             </nav>
           </div>
           <div className={styles.footer_inner_container}>
@@ -82,21 +85,35 @@ export const DynamicPageFooter = () => {
               <p className={styles.footer_inner_title}>Наши сервисы</p>
               <nav className={styles.footer_nav}>
                 <Link href={"#"}>Rent car</Link>
-                {services.map((service) => {
-                  return (
-                    <Link key={service.id} href={`/${service.slug}`}>
-                      {service.title}
-                    </Link>
-                  );
+                {services.map((service: any) => {
+                  if (router.locale === "ru") {
+                    return (
+                      <Link key={service.id} href={`/${service.slug}`}>
+                        {service.title.ru}
+                      </Link>
+                    );
+                  } else if (router.locale === "en") {
+                    return (
+                      <Link key={service.id} href={`/${service.slug}`}>
+                        {service.title.en}
+                      </Link>
+                    );
+                  } else if (router.locale === "uz") {
+                    return (
+                      <Link key={service.id} href={`/${service.slug}`}>
+                        {service.title.uz}
+                      </Link>
+                    );
+                  }
                 })}
               </nav>
             </div>
             <div className={styles.footer_inner_div}>
               <p className={styles.footer_inner_title}>Компания</p>
               <nav className={styles.footer_nav}>
-                <Link href={"/"}>Главная</Link>
-                <Link href={"/about"}>O нас</Link>
-                <Link href={"/contact"}>Контакты</Link>
+                <Link href={"/"}>{translations.main}</Link>
+                <Link href={"/about"}>{translations.about}</Link>
+                <Link href={"/contact"}>{translations.contact}</Link>
               </nav>
             </div>
             <div className={styles.footer_inner_div}>

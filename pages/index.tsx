@@ -1,18 +1,12 @@
-import axios from "axios";
 import Head from "next/head";
-import { useEffect } from "react";
 import { HomeLayout } from "../components/homelayout/homelayout";
 import { MainBlogs } from "../components/mainpage/blogs/blogs";
 import { MainDirections } from "../components/mainpage/directions/directions";
+import { MainHero } from "../components/mainpage/hero/hero";
 import { MainMap } from "../components/mainpage/map/map";
+import { MainStatistics } from "../components/mainpage/stats/stats";
 
 export default function Home() {
-  useEffect(() => {
-    axios
-      .get(process.env.NEXT_PUBLIC_ENDPOINT + "/site-info")
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  }, []);
   return (
     <>
       <Head>
@@ -25,7 +19,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeLayout>
-        <p>Main</p>
+        <MainHero />
+        <MainStatistics />
         <MainDirections />
         <MainBlogs title={"Наши Блоги"} />
         <MainMap />

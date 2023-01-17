@@ -18,6 +18,7 @@ export default function BlogInnerPage() {
       </Head>
       <HomeLayout>
         <IntroSection
+          mainpage={{ url: "/" }}
           color={"#001935"}
           title={"Наши Блоги"}
           page={

@@ -1,0 +1,132 @@
+.description_section {
+  background-color: #0f5c49;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.description_section::after {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: -15%;
+  width: 700px;
+  height: 700px;
+  background: linear-gradient(
+    152.3deg,
+    #104e3e 13.75%,
+    rgba(16, 78, 62, 0) 46.65%
+  );
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.description_section::before {
+  content: "";
+  position: absolute;
+  right: -15%;
+  bottom: -65%;
+  width: 700px;
+  height: 700px;
+  background: linear-gradient(
+    152.3deg,
+    #104e3e 13.75%,
+    rgba(16, 78, 62, 0) 46.65%
+  );
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.description_inner {
+  display: grid;
+  grid-template-columns: 0.45fr 0.55fr;
+  align-items: center;
+  gap: 80px;
+  padding-block: 120px;
+}
+
+.description_texts {
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.description_texts_container {
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stats_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 36px;
+  row-gap: 120px;
+}
+
+.singlestat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 16px;
+  border-left: 1px solid var(--gold);
+  color: var(--white);
+}
+
+.singlestat_title {
+  font-family: var(--neue-semibold), var(--inter), sans-serif;
+  font-size: 40px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+@media (max-width: 1800px) {
+  .singlestat_title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .stats_container {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+  .singlestat_title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 880px) {
+  .description_inner {
+    padding-block: 40px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .description_section::before {
+    right: -15%;
+    bottom: -30%;
+  }
+  .description_section::after {
+    top: -10%;
+  }
+}
+
+@media (max-width: 580px) {
+  .description_inner {
+    padding-block: 40px;
+  }
+  .description_section::after {
+    left: -40%;
+  }
+  .description_section::before {
+    right: -45%;
+    bottom: -30%;
+  }
+  .stats_container {
+    gap: 16px;
+  }
+}
