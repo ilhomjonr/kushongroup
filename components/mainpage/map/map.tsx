@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { IMaskInput } from "react-imask";
+import { TranslationsContext } from "../../../contexts/TranslationsContext";
 import mainStyles from "../../../styles/home.module.css";
 import styles from "./map.module.css";
 
 export const MainMap = () => {
+  const { translations } = useContext(TranslationsContext);
   return (
     <section className={`section`}>
       <div className={`box ${styles.map_inner}`}>
@@ -11,22 +14,22 @@ export const MainMap = () => {
             <h3
               className={`${mainStyles.section_title} ${styles.section_title}`}
             >
-              Свяжется с нами
+              {translations.contacthe}
             </h3>
-            <p className={`p`}>
-              Если у вас есть вопросы о формате или вы не знаете, что выбрать,
-              оставьте свой номер — мы позвоним, чтобы ответить на все ваши
-              вопросы.
-            </p>
+            <p className={`p`}>{translations.contactdesc}</p>
           </div>
           <form className={styles.form}>
-            <input type="text" placeholder="Имя" required />
+            <input
+              type="text"
+              placeholder={translations.contactname}
+              required
+            />
             <div>
               <span>+998</span>
               <IMaskInput mask={"(00) 000 00 00"} />
             </div>
-            <input type="text" placeholder="Сообщение" />
-            <button type="submit">Отправить сообщение</button>
+            <input type="text" placeholder={translations.contactmessage} />
+            <button type="submit">{translations.contactsubmit}</button>
           </form>
         </div>
         <div className={styles.map}>
